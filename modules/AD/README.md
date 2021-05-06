@@ -1,7 +1,5 @@
-####################################################################################################
 # Description    : Terraform Module to create a Microsoft Active Directory using AWS Directroy Services | MAP-41
 # Author     : Sherif ElTammimy
-####################################################################################################
 
 
 This module will create a Microsoft Active Directory using AWS Directroy Services.
