@@ -56,6 +56,7 @@ module "AD" {
 | dns\_ip\_addresses | A list of IP addresses of the DNS servers for the directory or connector |
 | id | The directory identifier. |
 | security\_group\_id | The ID of the security group created by the directory |
-| vpc\_id | The ID of the security group created by the directory |
-| private\_subnets | The ID of the security group created by the directory |
-| private\_routes | The ID of the security group created by the directory |
+| vpc\_id | The ID of the created VPC |
+| vpc\_cidr | CIDR associated with the VPC to be created |
+| private\_subnets | The private subnets created inside the created VPC |
+| private\_routes | The private routes associated to the private subnets |
