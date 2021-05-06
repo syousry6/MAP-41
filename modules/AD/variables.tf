@@ -48,7 +48,6 @@ variable "dir_domain_name" {
 variable "dir_admin_password" {
   description = "The password for the default administrative user, Admin."
   type        = string
-  default     = "Sup3rS3cret"
 }
 
 variable "short_name" {
