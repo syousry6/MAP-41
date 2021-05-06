@@ -7,10 +7,20 @@ This module will create a Microsoft Active Directory using AWS Directroy Service
 ## Basic Usage
 
 ```
-module "msad" {
-  source     = "git@github.com:syousry6/MAP-41/modules/AD//?ref=v0.12.0"
-  name       = "corp.example.local"
-  password   = "${data.aws_kms_secrets.ad_credentials.plaintext["password"]}"
+module "vpc" {
+  source   = "./modules/aws_vpc/"
+  vpc_name = var.vpc_name
+  vpc_cidr = var.vpc_ip_cidr
+  tags     = var.tags
+}
+```
+
+
+```
+module "AD" {
+  source   = "./modules/AD/"
+  dir_domain_name       = "${var.dir_domain_name}"
+  dir_admin_password   = "${var.dir_admin_password}"
   short_name = "corp"
   subnet_ids = "${module.vpc.private_subnets}"
   vpc_id     = "${module.vpc.vpc_id}"
@@ -46,4 +56,6 @@ module "msad" {
 | dns\_ip\_addresses | A list of IP addresses of the DNS servers for the directory or connector |
 | id | The directory identifier. |
 | security\_group\_id | The ID of the security group created by the directory |
-
+| vpc\_id | The ID of the security group created by the directory |
+| private\_subnets | The ID of the security group created by the directory |
+| private\_routes | The ID of the security group created by the directory |
